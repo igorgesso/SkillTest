@@ -7,13 +7,17 @@ module Exam::Geometric
 
   private
     def slope_straight_line x1,y1,x2,y2
-      #calcula coeficente algular da reta
+      #calcula coeficente algular da reta      
       Geometry::Line[[x1,y1],[x2,y2]].slope
     end
 
     def theta
-      #define o valor de theta aplicando modulo para não ficar negativo
+      #testa se a reta NA é vertical e calcula o valor de theta aplicando modulo para não ficar negativo
+      if self.point_n.x == self.point_a.x
+        (1/slope_straight_line(self.point_po.x,self.point_po.y,self.point_or.x,self.point_or.y)).abs
+      else  
       ((slope_straight_line(self.point_po.x,self.point_po.y,self.point_or.x,self.point_or.y) - slope_straight_line(self.point_n.x,self.point_n.y,self.point_a.x,self.point_a.y))/(1 + slope_straight_line(point_po.x,point_po.y,point_or.x,point_or.y)*slope_straight_line(point_n.x,point_n.y,point_a.x,point_a.y))).abs
+      end
     end
 
     def degrees
