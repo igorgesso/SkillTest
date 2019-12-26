@@ -6,3 +6,4 @@ $( document ).on('turbolinks:load', function() {
     Exams.app.start()
   }
 })
+

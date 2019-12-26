@@ -19,3 +19,4 @@
 //= require exams/setup.js
 //= require three.min
 //= require_tree .
+//= stub exams/exam_canvas.js
